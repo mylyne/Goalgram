@@ -5437,7 +5437,16 @@ class ChatControllerNode: ASDisplayNode, ASScrollViewDelegate {
                         messages[messages.count - 1] = messages[messages.count - 1].withUpdatedCorrelationId(correlationId)
                         
                         var replyPanel: ChatInputAccessoryPanelView?
-                        if self.shouldAnimateMessageTransition, let inputPanelNode = self.inputPanelNode as? ChatTextInputPanelNode, let textInput = inputPanelNode.makeSnapshotForTransition() {
+                        // The cover display can flash during the snapshot/portal text-send
+                        // transition. Keep normal list insertion there, without changing the
+                        // inner display or the user's system-wide Reduce Motion setting.
+                        let useSnapshotTransition: Bool
+                        if let (layout, _) = self.validLayout, layout.deviceMetrics == .iPhoneDuo, !layout.deviceMetrics.isIPhoneDuoInnerScreen(size: mainWindowScreenBounds.size) {
+                            useSnapshotTransition = false
+                        } else {
+                            useSnapshotTransition = self.shouldAnimateMessageTransition
+                        }
+                        if useSnapshotTransition, let inputPanelNode = self.inputPanelNode as? ChatTextInputPanelNode, let textInput = inputPanelNode.makeSnapshotForTransition() {
                             replyPanel = inputPanelNode.accessoryPanelView
                             
                             usedCorrelationId = correlationId

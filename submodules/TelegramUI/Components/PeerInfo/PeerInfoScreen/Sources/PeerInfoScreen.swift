@@ -238,6 +238,7 @@ final class PeerInfoScreenNode: ViewControllerTracingNode, PeerInfoScreenNodePro
     let cachedDataPromise = Promise<EngineCachedPeerData?>()
     
     let scrollNode: ASScrollNode
+    private let avatarScrollBridge = PeerInfoAvatarScrollBridge()
     let edgeEffectView: EdgeEffectView
     
     let headerNode: PeerInfoHeaderNode
@@ -5607,6 +5608,13 @@ final class PeerInfoScreenNode: ViewControllerTracingNode, PeerInfoScreenNodePro
             return
         }
         self.validLayout = (layout, navigationHeight)
+
+        self.avatarScrollBridge.update(
+            container: self.view,
+            scrollView: self.scrollNode.view,
+            avatarView: self.headerNode.avatarListNode.listContainerNode.view,
+            enabled: layout.deviceMetrics == .iPhoneDuo
+        )
         
         self.headerNode.customNavigationContentNode = self.paneContainerNode.currentPane?.node.navigationContentNode
         

@@ -1,0 +1,31 @@
+{
+  "upstream": "TelegramMessenger/Telegram-iOS",
+  "tag": "release-13.1.1",
+  "commit": "fb0e62ba8a147f0821da6aa63c09da7d79a10111",
+  "files": {
+    "Telegram/BUILD": "0d1acc1e43d46629219868a32b1922d27cf1231c8d7eba3c1a57f7639a305efb",
+    "Telegram/NotificationService/Sources/NotificationService.swift": "06624a710c4062714cb7a4f64e8b7030c6b251a1cef277cc88f24abcb9475088",
+    "Telegram/Telegram-iOS/Premium.alticon/PremiumIpad.png": "84fb2144bb2f0c32f951ce063b0c83631b6af71b31898acc1466aa2d19989439",
+    "Telegram/Telegram-iOS/Premium.alticon/PremiumIpad@2x.png": "a55224eee9b8e052a312a8a9941ef1512c2402b6b43f789b7952de608334a1c9",
+    "Telegram/Telegram-iOS/Premium.alticon/PremiumLargeIpad@2x.png": "3b742e46f98959cf0c168ca88ea65fe2cc03d7cb745c4fd2ded990b310bbd379",
+    "Telegram/Telegram-iOS/PremiumBlack.alticon/PremiumBlackIpad.png": "0eb042967c7566ca114e3760f637f39a8f1a4997a94059447f114f569492efc0",
+    "Telegram/Telegram-iOS/PremiumBlack.alticon/PremiumBlackIpad@2x.png": "45725c0ff732c9f7a1485dbcf622a4e9b29153da22b865b14f5b9b47d5b5856e",
+    "Telegram/Telegram-iOS/PremiumBlack.alticon/PremiumBlackLargeIpad@2x.png": "ef3edd1f8735c2d7244d4299e4e949d8b62696dab44d265ddf8986341a97a4c3",
+    "Telegram/Telegram-iOS/PremiumTurbo.alticon/PremiumTurboIpad.png": "4ae6fe6a88c9fdcfffdbad5fa4ff9366671982ed537cf11e75b5fe2c7b532efe",
+    "Telegram/Telegram-iOS/PremiumTurbo.alticon/PremiumTurboIpad@2x.png": "d15aca5f514cf77e7477e2c046dd963b472071f17ea49130503d10ab43ccaf91",
+    "Telegram/Telegram-iOS/PremiumTurbo.alticon/PremiumTurboLargeIpad@2x.png": "1d273b94b1189fb592a73aad53c07d040da999a927fd13b5c3bcfb4f365613c1",
+    "Telegram/Telegram-iOS/Telegram.icon/Assets/Goalgram.png": "361e387c52b2c02fe9cacf5fb3a913c10160de1738fa4fcf636e514438b74938",
+    "Telegram/Telegram-iOS/Telegram.icon/icon.json": "44dc222e06fbb9f6030fb15988fd992c7073e37c544baefb360b0dcc9b0d59b1",
+    "Telegram/Telegram-iOS/WhiteFilledIcon.alticon/WhiteFilledIconIpad.png": "e277accb67b104a044922f9da2e480404043a3ebb6b81216861f2beff8d6e9ed",
+    "Telegram/Telegram-iOS/WhiteFilledIcon.alticon/WhiteFilledIconIpad@2x.png": "d72579b9791aaafcc0b2d6ec1005dd46095a5371d5ddc47e060a7e524578ac32",
+    "Telegram/Telegram-iOS/WhiteFilledIcon.alticon/WhiteFilledIconLargeIpad@2x.png": "0935267cc176c29c0c7751f2df9f4181fa01bde10d5e6902b1937b56748be276",
+    "Telegram/Telegram-iOS/ar.lproj/InfoPlist.strings": "74a90f552f3af704b5015024fdb6c1633da98eeaea261a77deb7e518072aab67",
+    "Telegram/Telegram-iOS/ko.lproj/InfoPlist.strings": "96d49f49d6e7178b5b4b04635e590aa99a2ba1a4222c4812610877885a2a05f1",
+    "submodules/Display/Source/Font.swift": "d386b0ca7ce8c3c0f03377eb859b513ec9d0fff988b79710e658c687b9ead385",
+    "submodules/TelegramUI/BUILD": "6a07eeddd5e77389a5d611cfb75f03ff904986148f7f187ea97d679e5f4992ef",
+    "submodules/TelegramUI/Components/PeerInfo/PeerInfoScreen/Sources/PeerInfoAvatarScrollBridge.swift": "ffde2d604508f3cf052f8e83c1cc75d3b925f9fa174e9d3e118d5917140a3d38",
+    "submodules/TelegramUI/Components/PeerInfo/PeerInfoScreen/Sources/PeerInfoScreen.swift": "dbd51207b4fa25fdf52101e4a4ff023821cb20bef45248e38571e0870aa05b34",
+    "submodules/TelegramUI/Sources/Chat/ChatControllerNavigationButtonAction.swift": "07c0db88bfd697981b4d0fd80022dc32f41aef244d3c3177e7614633b77c04d7",
+    "submodules/TelegramUI/Sources/ChatControllerNode.swift": "38643408fffa94681d92aba349e41125e627dccb3a8e508a36f71ef6494ac687"
+  }
+}

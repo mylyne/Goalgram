@@ -447,7 +447,9 @@ extension ChatControllerImpl {
                                 if peer.smallProfileImage == nil {
                                     expandAvatar = false
                                 }
-                                if let validLayout = self.validLayout, validLayout.deviceMetrics.type == .tablet {
+                                // Open the normal information page from the Duo chat rail.
+                                // The profile's own avatar still opens its photo when tapped.
+                                if let validLayout = self.validLayout, validLayout.deviceMetrics.type == .tablet || validLayout.deviceMetrics == .iPhoneDuo {
                                     expandAvatar = false
                                 }
                                 let mode: PeerInfoControllerMode

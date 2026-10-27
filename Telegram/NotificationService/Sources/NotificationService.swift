@@ -27,6 +27,96 @@ private let queue = Queue()
 
 private var installedSharedLogger = false
 
+// Goalgram compatibility until notification-filtering entitlement is granted.
+// Only generated, empty results are tagged; original APNs fallback content is
+// deliberately left intact so a failed decrypt never hides a real message.
+private let goalgramEmptyNotificationThread = "goalgram-empty-notification"
+
+private func goalgramPreparedNotificationContent(_ content: UNNotificationContent) -> UNNotificationContent {
+    guard content.title.isEmpty, content.subtitle.isEmpty, content.body.isEmpty,
+          content.attachments.isEmpty,
+          let result = content.mutableCopy() as? UNMutableNotificationContent else {
+        return content
+    }
+    // A truly empty result can make iOS restore the original APNs alert without
+    // the filtering entitlement. Swiftgram uses a blank, passive result instead.
+    result.title = " "
+    result.sound = nil
+    result.threadIdentifier = goalgramEmptyNotificationThread
+    if #available(iOSApplicationExtension 15.0, macOS 12.0, *) {
+        result.interruptionLevel = .passive
+        result.relevanceScore = 0.0
+    }
+    return result
+}
+
+private func goalgramEmptyNotificationIdentifiers(_ contents: [(String, UNNotificationContent)]) -> [String] {
+    return contents.compactMap { identifier, content in
+        content.threadIdentifier == goalgramEmptyNotificationThread ? identifier : nil
+    }
+}
+
+private func goalgramRemoveEmptyNotifications(remainingAttempts: Int = 1) {
+    guard remainingAttempts > 0 else { return }
+    let center = UNUserNotificationCenter.current()
+    center.getDeliveredNotifications { notifications in
+        let identifiers = goalgramEmptyNotificationIdentifiers(notifications.map { ($0.request.identifier, $0.request.content) })
+        if !identifiers.isEmpty {
+            center.removeDeliveredNotifications(withIdentifiers: identifiers)
+        }
+        // Delivery happens asynchronously after the content handler returns.
+        // Bound retries to one second; do not keep the extension alive or poll
+        // indefinitely. A later incoming push also cleans up tagged leftovers.
+        if remainingAttempts > 1 {
+            DispatchQueue.global(qos: .utility).asyncAfter(deadline: .now() + 0.2) {
+                goalgramRemoveEmptyNotifications(remainingAttempts: remainingAttempts - 1)
+            }
+        }
+    }
+}
+
+// Temporary, bounded Goalgram diagnostics. Record stages only, never payloads,
+// message/account identifiers, device tokens or notification decryption keys.
+private enum GoalgramPushStage: String {
+    case received, handlerStarted, loggingOn, loggingOff, processingPayload
+    case missingPayload, invalidEncoding, missingAccountKey
+    case missingStateManager, missingDecryptionKey, decryptionFailed, invalidJSON
+    case readHistory, otherEvent, readStarted, readCommitted, deliveredScanned
+    case notificationsMatched, removalRequested, badgeComputed, completed, expired
+}
+
+private let goalgramPushTraceQueue = DispatchQueue(label: "GoalgramPushStages")
+
+private func recordGoalgramPushStage(_ stage: GoalgramPushStage, episode: String, count: Int? = nil) {
+    guard Bundle.main.bundleIdentifier == "com.haocheng.goalgram.NotificationService",
+          let container = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.haocheng.goalgram") else {
+        return
+    }
+    let directory = container.appendingPathComponent("telegram-data/logs/notification-logs", isDirectory: true)
+    let file = directory.appendingPathComponent("log-goalgram-push-stages.txt")
+    let previous = directory.appendingPathComponent("log-goalgram-push-stages-previous.txt")
+    var line = String(format: "[GoalgramPushStages] %.3f episode=%@ stage=%@", Date().timeIntervalSince1970, episode, stage.rawValue)
+    if let count { line += " count=\(count)" }
+    line += "\n"
+    guard let data = line.data(using: .utf8) else { return }
+    goalgramPushTraceQueue.sync {
+        let manager = FileManager.default
+        try? manager.createDirectory(at: directory, withIntermediateDirectories: true)
+        if let attributes = try? manager.attributesOfItem(atPath: file.path),
+           let size = attributes[.size] as? NSNumber, size.intValue > 65536 {
+            try? manager.removeItem(at: previous)
+            try? manager.moveItem(at: file, to: previous)
+        }
+        if !manager.fileExists(atPath: file.path) {
+            guard manager.createFile(atPath: file.path, contents: nil, attributes: [.posixPermissions: 0o600, .protectionKey: FileProtectionType.completeUntilFirstUserAuthentication]) else { return }
+        }
+        guard let handle = try? FileHandle(forWritingTo: file) else { return }
+        defer { try? handle.close() }
+        guard (try? handle.seekToEnd()) != nil else { return }
+        try? handle.write(contentsOf: data)
+    }
+}
+
 private func setupSharedLogger(rootPath: String, path: String) {
     if !installedSharedLogger {
         installedSharedLogger = true
@@ -806,6 +896,7 @@ private final class NotificationServiceHandler {
         setupSharedLogger(rootPath: logsPath, path: logsPath)
         
         Logger.shared.log("NotificationService \(episode)", "Started handling notification")
+        recordGoalgramPushStage(.handlerStarted, episode: episode)
 
         initializeAccountManagement()
 
@@ -836,6 +927,7 @@ private final class NotificationServiceHandler {
         semaphore.wait()
         
         Logger.shared.log("NotificationService \(episode)", "Logging settings: (logToFile: \(loggingSettings.logToFile))")
+        recordGoalgramPushStage(loggingSettings.logToFile ? .loggingOn : .loggingOff, episode: episode)
         
         Logger.shared.logToFile = loggingSettings.logToFile
         Logger.shared.logToConsole = loggingSettings.logToConsole
@@ -866,9 +958,11 @@ private final class NotificationServiceHandler {
         }
 
         Logger.shared.log("NotificationService \(episode)", "Begin processing payload")
+        recordGoalgramPushStage(.processingPayload, episode: episode)
 
         guard var encryptedPayload = payload["p"] as? String else {
             Logger.shared.log("NotificationService \(episode)", "Invalid payload 1")
+            recordGoalgramPushStage(.missingPayload, episode: episode)
             return nil
         }
         encryptedPayload = encryptedPayload.replacingOccurrences(of: "-", with: "+")
@@ -878,6 +972,7 @@ private final class NotificationServiceHandler {
         }
         guard let payloadData = Data(base64Encoded: encryptedPayload) else {
             Logger.shared.log("NotificationService \(episode)", "Invalid payload 2")
+            recordGoalgramPushStage(.invalidEncoding, episode: episode)
             return nil
         }
 
@@ -930,6 +1025,7 @@ private final class NotificationServiceHandler {
 
             guard let strongSelf = self, let recordId = recordId else {
                 Logger.shared.log("NotificationService \(episode)", "Couldn't find a matching decryption key")
+                recordGoalgramPushStage(.missingAccountKey, episode: episode)
 
                 let content = NotificationContent(isLockedMessage: nil)
                 updateCurrentContent(content)
@@ -952,6 +1048,7 @@ private final class NotificationServiceHandler {
                 }
                 guard let stateManager = stateManager else {
                     Logger.shared.log("NotificationService \(episode)", "Didn't receive stateManager")
+                    recordGoalgramPushStage(.missingStateManager, episode: episode)
 
                     let content = NotificationContent(isLockedMessage: nil)
                     updateCurrentContent(content)
@@ -1005,6 +1102,7 @@ private final class NotificationServiceHandler {
                     }
                     guard let notificationsKey = notificationsKey else {
                         Logger.shared.log("NotificationService \(episode)", "Didn't receive decryption key")
+                        recordGoalgramPushStage(.missingDecryptionKey, episode: episode)
 
                         let content = NotificationContent(isLockedMessage: nil)
                         updateCurrentContent(content)
@@ -1014,6 +1112,7 @@ private final class NotificationServiceHandler {
                     }
                     guard let decryptedPayload = decryptedNotificationPayload(key: notificationsKey, data: payloadData) else {
                         Logger.shared.log("NotificationService \(episode)", "Couldn't decrypt payload")
+                        recordGoalgramPushStage(.decryptionFailed, episode: episode)
 
                         let content = NotificationContent(isLockedMessage: nil)
                         updateCurrentContent(content)
@@ -1023,6 +1122,7 @@ private final class NotificationServiceHandler {
                     }
                     guard let payloadJson = try? JSONSerialization.jsonObject(with: decryptedPayload, options: []) as? [String: Any] else {
                         Logger.shared.log("NotificationService \(episode)", "Couldn't process payload as JSON")
+                        recordGoalgramPushStage(.invalidJSON, episode: episode)
 
                         let content = NotificationContent(isLockedMessage: nil)
                         updateCurrentContent(content)
@@ -1032,6 +1132,7 @@ private final class NotificationServiceHandler {
                     }
 
                     Logger.shared.log("NotificationService \(episode)", "Decrypted payload: \(payloadJson)")
+                    recordGoalgramPushStage(payloadJson["loc-key"] as? String == "READ_HISTORY" ? .readHistory : .otherEvent, episode: episode)
 
                     var peerId: PeerId?
                     var messageId: MessageId.Id?
@@ -2570,11 +2671,14 @@ private final class NotificationServiceHandler {
                             })
                         case let .readMessage(id):
                             Logger.shared.log("NotificationService \(episode)", "Will read message \(id)")
+                            recordGoalgramPushStage(.readStarted, episode: episode)
                             let _ = (stateManager.postbox.transaction { transaction -> Void in
                                 transaction.applyIncomingReadMaxId(id)
                             }
                             |> deliverOn(strongSelf.queue)).start(completed: {
+                                recordGoalgramPushStage(.readCommitted, episode: episode)
                                 UNUserNotificationCenter.current().getDeliveredNotifications(completionHandler: { notifications in
+                                    recordGoalgramPushStage(.deliveredScanned, episode: episode, count: notifications.count)
                                     let notificationDebugList = notifications.map { notification -> String in
                                         if let peerIdString = notification.request.content.userInfo["peerId"] as? String, let peerIdValue = Int64(peerIdString), let messageIdString = notification.request.content.userInfo["msg_id"] as? String, let messageIdValue = Int32(messageIdString) {
                                             return "peerId: \(peerIdValue), messageId: \(messageIdValue)"
@@ -2593,6 +2697,7 @@ private final class NotificationServiceHandler {
                                         }
                                     }
 
+                                    recordGoalgramPushStage(.notificationsMatched, episode: episode, count: removeIdentifiers.count)
                                     let completeRemoval: () -> Void = {
                                         guard let strongSelf = self else {
                                             return
@@ -2605,6 +2710,7 @@ private final class NotificationServiceHandler {
                                             var content = NotificationContent(isLockedMessage: nil)
                                             if isCurrentAccount {
                                                 content.badge = Int(value.0)
+                                                recordGoalgramPushStage(.badgeComputed, episode: episode, count: Int(value.0))
                                             }
 
                                             Logger.shared.log("NotificationService \(episode)", "Unread count: \(value.0), isCurrentAccount: \(isCurrentAccount)")
@@ -2618,6 +2724,7 @@ private final class NotificationServiceHandler {
 
                                     if !removeIdentifiers.isEmpty {
                                         Logger.shared.log("NotificationService \(episode)", "Will try to remove \(removeIdentifiers.count) notifications")
+                                        recordGoalgramPushStage(.removalRequested, episode: episode, count: removeIdentifiers.count)
                                         UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: removeIdentifiers)
                                         queue.after(1.0, {
                                             completeRemoval()
@@ -2704,9 +2811,11 @@ final class NotificationService: UNNotificationServiceExtension {
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         let episode = String(UInt32.random(in: 0 ..< UInt32.max), radix: 16)
         self.episode = episode
+        recordGoalgramPushStage(.received, episode: episode)
         
         self.initialContent = request.content
         self.contentHandler = contentHandler
+        goalgramRemoveEmptyNotifications()
 
         self.impl = nil
 
@@ -2727,11 +2836,16 @@ final class NotificationService: UNNotificationServiceExtension {
 
                     if let contentHandler = strongSelf.contentHandler {
                         Logger.shared.log("NotificationService \(episode)", "Complete handling notification")
+                        recordGoalgramPushStage(.completed, episode: episode)
                         
                         strongSelf.contentHandler = nil
                         
                         if let content = content.with({ $0 }) {
-                            contentHandler(content.generate())
+                            let preparedContent = goalgramPreparedNotificationContent(content.generate())
+                            contentHandler(preparedContent)
+                            if preparedContent.threadIdentifier == goalgramEmptyNotificationThread {
+                                goalgramRemoveEmptyNotifications(remainingAttempts: 6)
+                            }
                         } else if let initialContent = strongSelf.initialContent {
                             contentHandler(initialContent)
                         }
@@ -2746,6 +2860,7 @@ final class NotificationService: UNNotificationServiceExtension {
     }
     
     override func serviceExtensionTimeWillExpire() {
+        recordGoalgramPushStage(.expired, episode: self.episode ?? "unknown")
         // Releasing impl deallocates the handler on its queue, which disposes the in-flight
         // poll (getDifference/state replay) and drops the keep-alive network connection.
         // Without this, that work keeps running after the system takes back control and
@@ -2758,7 +2873,11 @@ final class NotificationService: UNNotificationServiceExtension {
             Logger.shared.log("NotificationService \(self.episode ?? "???")", "Completing due to serviceExtensionTimeWillExpire")
             
             if let content = self.content.with({ $0 }) {
-                contentHandler(content.generate())
+                let preparedContent = goalgramPreparedNotificationContent(content.generate())
+                contentHandler(preparedContent)
+                if preparedContent.threadIdentifier == goalgramEmptyNotificationThread {
+                    goalgramRemoveEmptyNotifications(remainingAttempts: 6)
+                }
             } else if let initialContent = self.initialContent {
                 contentHandler(initialContent)
             }
