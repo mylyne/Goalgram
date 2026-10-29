@@ -1,0 +1,1078 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		076BB1322942ABDECB3401AD /* NotificationContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 663B308FE7047B3B165A838D /* NotificationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		432C45FCABBCA77004B47180 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7972D4EB5BFAC8065AB859AC /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		813D7FF2D97172F975720D15 /* NotificationServiceExtensionv1.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8FE3EDDDAA6A59BA6ADCB496 /* NotificationServiceExtensionv1.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		898CD6B834FC21D3EEBACD97 /* IntentsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 50FA6779BD5B1DE6A3A82107 /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB4FA2CD9CC872FBA8B5F607 /* BroadcastUploadExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 86B34CF49AAFDEB2A11EE576 /* BroadcastUploadExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F3A4FBC0C35660BF0F3C8935 /* WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 96E127DC050D489C2A370F6E /* WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19C6BBABF2A93AF8C9C142DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78350F2E6148342BDA0F5F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F44FF5C35BCF647A72A32FDC;
+			remoteInfo = NotificationServiceExtensionv1;
+		};
+		69A1B33169780F09B920E8B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78350F2E6148342BDA0F5F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06A9A0664A9FAA3A00C3D308;
+			remoteInfo = NotificationContentExtension;
+		};
+		A9AA3BCC9101958C9629AB19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78350F2E6148342BDA0F5F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06D43668661B819DA08DEC1A;
+			remoteInfo = ShareExtension;
+		};
+		B1A55C9C9A7168628AAF6857 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78350F2E6148342BDA0F5F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0955D18EDF825F2DF74CAB0;
+			remoteInfo = BroadcastUploadExtension;
+		};
+		D5F6B57DADA439EC36E38F16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78350F2E6148342BDA0F5F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE7E6DAB67306D02AB7F0052;
+			remoteInfo = IntentsExtension;
+		};
+		F94322418D84071D073E7BAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78350F2E6148342BDA0F5F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E1B6488C79C68839022E3E1;
+			remoteInfo = WidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0212A1D7CE5A6B47CDD9043E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DB4FA2CD9CC872FBA8B5F607 /* BroadcastUploadExtension.appex in Embed Foundation Extensions */,
+				898CD6B834FC21D3EEBACD97 /* IntentsExtension.appex in Embed Foundation Extensions */,
+				076BB1322942ABDECB3401AD /* NotificationContentExtension.appex in Embed Foundation Extensions */,
+				813D7FF2D97172F975720D15 /* NotificationServiceExtensionv1.appex in Embed Foundation Extensions */,
+				432C45FCABBCA77004B47180 /* ShareExtension.appex in Embed Foundation Extensions */,
+				F3A4FBC0C35660BF0F3C8935 /* WidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		474FDAB2F3A62BE3583FA47F /* Telegram.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Telegram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50FA6779BD5B1DE6A3A82107 /* IntentsExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		663B308FE7047B3B165A838D /* NotificationContentExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = NotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7972D4EB5BFAC8065AB859AC /* ShareExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		86B34CF49AAFDEB2A11EE576 /* BroadcastUploadExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = BroadcastUploadExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE3EDDDAA6A59BA6ADCB496 /* NotificationServiceExtensionv1.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = NotificationServiceExtensionv1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E127DC050D489C2A370F6E /* WidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		"TEMP_CEB9C9A6-2FC2-487E-8EC6-40F108462C9C" /* BuildNumber.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildNumber.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		953308DB0E0B5B79DA3450A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86B34CF49AAFDEB2A11EE576 /* BroadcastUploadExtension.appex */,
+				50FA6779BD5B1DE6A3A82107 /* IntentsExtension.appex */,
+				663B308FE7047B3B165A838D /* NotificationContentExtension.appex */,
+				8FE3EDDDAA6A59BA6ADCB496 /* NotificationServiceExtensionv1.appex */,
+				7972D4EB5BFAC8065AB859AC /* ShareExtension.appex */,
+				474FDAB2F3A62BE3583FA47F /* Telegram.app */,
+				96E127DC050D489C2A370F6E /* WidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0A89AB8F37126B6B09B2D3E = {
+			isa = PBXGroup;
+			children = (
+				953308DB0E0B5B79DA3450A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		"TEMP_23532FBE-BE4D-4DAA-A300-20589127294E" /* cloud */ = {
+			isa = PBXGroup;
+			children = (
+				"TEMP_CEB9C9A6-2FC2-487E-8EC6-40F108462C9C" /* BuildNumber.xcconfig */,
+			);
+			path = cloud;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06A9A0664A9FAA3A00C3D308 /* NotificationContentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FECD66627767A7822046571C /* Build configuration list for PBXNativeTarget "NotificationContentExtension" */;
+			buildPhases = (
+				82A80F2B523475E1D6537017 /* Sources */,
+				E14024586BB21F27ED4FBDFE /* Stage real Bazel product */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationContentExtension;
+			packageProductDependencies = (
+			);
+			productName = NotificationContentExtension;
+			productReference = 663B308FE7047B3B165A838D /* NotificationContentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		06D43668661B819DA08DEC1A /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21C97761704F9BA0AD3E67EF /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				29A014C43207A1F661472BF4 /* Sources */,
+				1A7EAA44B711E92FB3803571 /* Stage real Bazel product */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension;
+			packageProductDependencies = (
+			);
+			productName = ShareExtension;
+			productReference = 7972D4EB5BFAC8065AB859AC /* ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		0E1B6488C79C68839022E3E1 /* WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1252332DA5DB8A2A0CE6E74D /* Build configuration list for PBXNativeTarget "WidgetExtension" */;
+			buildPhases = (
+				513476F9B65389D1DCD31413 /* Sources */,
+				2CB1CF7CA7CA02C52FCE13CB /* Stage real Bazel product */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = WidgetExtension;
+			productReference = 96E127DC050D489C2A370F6E /* WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F0955D18EDF825F2DF74CAB0 /* BroadcastUploadExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B2AE3F04165BE3F82B161FE /* Build configuration list for PBXNativeTarget "BroadcastUploadExtension" */;
+			buildPhases = (
+				32112B8235AED91B1512D599 /* Sources */,
+				BF80972DD9A38DACA01F2AAB /* Stage real Bazel product */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BroadcastUploadExtension;
+			packageProductDependencies = (
+			);
+			productName = BroadcastUploadExtension;
+			productReference = 86B34CF49AAFDEB2A11EE576 /* BroadcastUploadExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F44FF5C35BCF647A72A32FDC /* NotificationServiceExtensionv1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EB25CB81165206861F0FBFD /* Build configuration list for PBXNativeTarget "NotificationServiceExtensionv1" */;
+			buildPhases = (
+				85A26A6658FFB9C964E04BEF /* Sources */,
+				10DB5FD77F61C9A191A984D8 /* Stage real Bazel product */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationServiceExtensionv1;
+			packageProductDependencies = (
+			);
+			productName = NotificationServiceExtensionv1;
+			productReference = 8FE3EDDDAA6A59BA6ADCB496 /* NotificationServiceExtensionv1.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		FE7E6DAB67306D02AB7F0052 /* IntentsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A23C72C2A7D1C3298DFD4DC /* Build configuration list for PBXNativeTarget "IntentsExtension" */;
+			buildPhases = (
+				C57A96D5C1778B25ABB6D090 /* Sources */,
+				C5F8DFAAB3C15882F50A6400 /* Stage real Bazel product */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntentsExtension;
+			packageProductDependencies = (
+			);
+			productName = IntentsExtension;
+			productReference = 50FA6779BD5B1DE6A3A82107 /* IntentsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		FF44F3232E03042DE583F4F6 /* Telegram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3146516710170C86FA836F9A /* Build configuration list for PBXNativeTarget "Telegram" */;
+			buildPhases = (
+				C2689F6404375C25B8EE82E4 /* Sources */,
+				0212A1D7CE5A6B47CDD9043E /* Embed Foundation Extensions */,
+				501B5C6881A66A5FD4540A92 /* Stage real Bazel product */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2F4977E5C73AF9C05DE7879 /* PBXTargetDependency */,
+				8CA1623679CD52A099B0DE84 /* PBXTargetDependency */,
+				68F1BB2D53ADA3CA21F8F636 /* PBXTargetDependency */,
+				27FACF7AA5CDAE2612576801 /* PBXTargetDependency */,
+				FF3BA2F8EDC8CACD04B35FA6 /* PBXTargetDependency */,
+				0779E2350A074A7AA4C3C13B /* PBXTargetDependency */,
+			);
+			name = Telegram;
+			packageProductDependencies = (
+			);
+			productName = Telegram;
+			productReference = 474FDAB2F3A62BE3583FA47F /* Telegram.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78350F2E6148342BDA0F5F06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					06A9A0664A9FAA3A00C3D308 = {
+						DevelopmentTeam = KCX4AZY2QZ;
+						ProvisioningStyle = Automatic;
+					};
+					06D43668661B819DA08DEC1A = {
+						DevelopmentTeam = KCX4AZY2QZ;
+						ProvisioningStyle = Automatic;
+					};
+					0E1B6488C79C68839022E3E1 = {
+						DevelopmentTeam = KCX4AZY2QZ;
+						ProvisioningStyle = Automatic;
+					};
+					F0955D18EDF825F2DF74CAB0 = {
+						DevelopmentTeam = KCX4AZY2QZ;
+						ProvisioningStyle = Automatic;
+					};
+					F44FF5C35BCF647A72A32FDC = {
+						DevelopmentTeam = KCX4AZY2QZ;
+						ProvisioningStyle = Automatic;
+					};
+					FE7E6DAB67306D02AB7F0052 = {
+						DevelopmentTeam = KCX4AZY2QZ;
+						ProvisioningStyle = Automatic;
+					};
+					FF44F3232E03042DE583F4F6 = {
+						DevelopmentTeam = KCX4AZY2QZ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2D5F327470F074A77E581D38 /* Build configuration list for PBXProject "GoalgramCloud" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C0A89AB8F37126B6B09B2D3E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 953308DB0E0B5B79DA3450A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF44F3232E03042DE583F4F6 /* Telegram */,
+				F0955D18EDF825F2DF74CAB0 /* BroadcastUploadExtension */,
+				FE7E6DAB67306D02AB7F0052 /* IntentsExtension */,
+				06A9A0664A9FAA3A00C3D308 /* NotificationContentExtension */,
+				F44FF5C35BCF647A72A32FDC /* NotificationServiceExtensionv1 */,
+				06D43668661B819DA08DEC1A /* ShareExtension */,
+				0E1B6488C79C68839022E3E1 /* WidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10DB5FD77F61C9A191A984D8 /* Stage real Bazel product */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Stage real Bazel product";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python3 -I \"$SRCROOT/stage-bundle.py\"";
+		};
+		1A7EAA44B711E92FB3803571 /* Stage real Bazel product */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Stage real Bazel product";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python3 -I \"$SRCROOT/stage-bundle.py\"";
+		};
+		2CB1CF7CA7CA02C52FCE13CB /* Stage real Bazel product */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Stage real Bazel product";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python3 -I \"$SRCROOT/stage-bundle.py\"";
+		};
+		501B5C6881A66A5FD4540A92 /* Stage real Bazel product */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Stage real Bazel product";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python3 -I \"$SRCROOT/stage-bundle.py\"";
+		};
+		BF80972DD9A38DACA01F2AAB /* Stage real Bazel product */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Stage real Bazel product";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python3 -I \"$SRCROOT/stage-bundle.py\"";
+		};
+		C5F8DFAAB3C15882F50A6400 /* Stage real Bazel product */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Stage real Bazel product";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python3 -I \"$SRCROOT/stage-bundle.py\"";
+		};
+		E14024586BB21F27ED4FBDFE /* Stage real Bazel product */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Stage real Bazel product";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python3 -I \"$SRCROOT/stage-bundle.py\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29A014C43207A1F661472BF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32112B8235AED91B1512D599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		513476F9B65389D1DCD31413 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82A80F2B523475E1D6537017 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85A26A6658FFB9C964E04BEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2689F6404375C25B8EE82E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C57A96D5C1778B25ABB6D090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0779E2350A074A7AA4C3C13B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E1B6488C79C68839022E3E1 /* WidgetExtension */;
+			targetProxy = F94322418D84071D073E7BAE /* PBXContainerItemProxy */;
+		};
+		27FACF7AA5CDAE2612576801 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F44FF5C35BCF647A72A32FDC /* NotificationServiceExtensionv1 */;
+			targetProxy = 19C6BBABF2A93AF8C9C142DA /* PBXContainerItemProxy */;
+		};
+		68F1BB2D53ADA3CA21F8F636 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06A9A0664A9FAA3A00C3D308 /* NotificationContentExtension */;
+			targetProxy = 69A1B33169780F09B920E8B3 /* PBXContainerItemProxy */;
+		};
+		8CA1623679CD52A099B0DE84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE7E6DAB67306D02AB7F0052 /* IntentsExtension */;
+			targetProxy = D5F6B57DADA439EC36E38F16 /* PBXContainerItemProxy */;
+		};
+		B2F4977E5C73AF9C05DE7879 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0955D18EDF825F2DF74CAB0 /* BroadcastUploadExtension */;
+			targetProxy = B1A55C9C9A7168628AAF6857 /* PBXContainerItemProxy */;
+		};
+		FF3BA2F8EDC8CACD04B35FA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06D43668661B819DA08DEC1A /* ShareExtension */;
+			targetProxy = A9AA3BCC9101958C9629AB19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		05C96FBCA6087163D209142D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Telegram/Goalgram.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = Telegram;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Telegram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram;
+				PRODUCT_NAME = Telegram;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		189FA904775525666E38FB3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentsExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = IntentsExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IntentsExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.SiriIntents;
+				PRODUCT_NAME = IntentsExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1FB7C65EBA458840D66C0091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BroadcastUploadExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = BroadcastUploadExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BroadcastUploadExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.BroadcastUpload;
+				PRODUCT_NAME = BroadcastUploadExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2C300DACF3BB4DAAD4D5B2BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = "TEMP_CEB9C9A6-2FC2-487E-8EC6-40F108462C9C" /* BuildNumber.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = KCX4AZY2QZ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 13.1.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4414B9856C58189EF724F67A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Telegram/Goalgram.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = Telegram;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Telegram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram;
+				PRODUCT_NAME = Telegram;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		54DDD6B4A47056891E2BFA1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = "TEMP_CEB9C9A6-2FC2-487E-8EC6-40F108462C9C" /* BuildNumber.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = KCX4AZY2QZ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 13.1.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5A1F746978F41D11E675B2CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = ShareExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.Share;
+				PRODUCT_NAME = ShareExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7A14225DE7C57E065F19DF31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationContentExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = NotificationContentExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NotificationContentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.NotificationContent;
+				PRODUCT_NAME = NotificationContentExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7A6A971BBDCF4F39AF757959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentsExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = IntentsExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IntentsExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.SiriIntents;
+				PRODUCT_NAME = IntentsExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C086EFC25A8034020540D18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = WidgetExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WidgetExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.Widget;
+				PRODUCT_NAME = WidgetExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EC24CFB14F123DDCF08B0C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = ShareExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.Share;
+				PRODUCT_NAME = ShareExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		935881EA2CD86026B7649A24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = WidgetExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WidgetExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.Widget;
+				PRODUCT_NAME = WidgetExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		945622F8D31054B22B0CC71B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationServiceExtensionv1/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = NotificationServiceExtensionv1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NotificationServiceExtensionv1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.NotificationService;
+				PRODUCT_NAME = NotificationServiceExtensionv1;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98AFB89D086094C1FE4DCB5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationServiceExtensionv1/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = NotificationServiceExtensionv1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NotificationServiceExtensionv1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.NotificationService;
+				PRODUCT_NAME = NotificationServiceExtensionv1;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D61FEC21215C3E812E06B1B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationContentExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = NotificationContentExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NotificationContentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.NotificationContent;
+				PRODUCT_NAME = NotificationContentExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3CACC8553F01E8DDEF022F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BroadcastUploadExtension/Goalgram.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_NAME = BroadcastUploadExtension;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BroadcastUploadExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haocheng.goalgram.BroadcastUpload;
+				PRODUCT_NAME = BroadcastUploadExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B2AE3F04165BE3F82B161FE /* Build configuration list for PBXNativeTarget "BroadcastUploadExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3CACC8553F01E8DDEF022F6 /* Debug */,
+				1FB7C65EBA458840D66C0091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1252332DA5DB8A2A0CE6E74D /* Build configuration list for PBXNativeTarget "WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C086EFC25A8034020540D18 /* Debug */,
+				935881EA2CD86026B7649A24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		21C97761704F9BA0AD3E67EF /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC24CFB14F123DDCF08B0C0 /* Debug */,
+				5A1F746978F41D11E675B2CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2D5F327470F074A77E581D38 /* Build configuration list for PBXProject "GoalgramCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C300DACF3BB4DAAD4D5B2BD /* Debug */,
+				54DDD6B4A47056891E2BFA1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3146516710170C86FA836F9A /* Build configuration list for PBXNativeTarget "Telegram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C96FBCA6087163D209142D /* Debug */,
+				4414B9856C58189EF724F67A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6EB25CB81165206861F0FBFD /* Build configuration list for PBXNativeTarget "NotificationServiceExtensionv1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945622F8D31054B22B0CC71B /* Debug */,
+				98AFB89D086094C1FE4DCB5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7A23C72C2A7D1C3298DFD4DC /* Build configuration list for PBXNativeTarget "IntentsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A6A971BBDCF4F39AF757959 /* Debug */,
+				189FA904775525666E38FB3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FECD66627767A7822046571C /* Build configuration list for PBXNativeTarget "NotificationContentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D61FEC21215C3E812E06B1B9 /* Debug */,
+				7A14225DE7C57E065F19DF31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78350F2E6148342BDA0F5F06 /* Project object */;
+}

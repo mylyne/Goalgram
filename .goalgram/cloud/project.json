@@ -1,0 +1,258 @@
+{
+  "name": "GoalgramCloud",
+  "options": {
+    "deploymentTarget": {
+      "iOS": "15.0"
+    },
+    "createIntermediateGroups": true,
+    "generateEmptyDirectories": true
+  },
+  "settings": {
+    "base": {
+      "DEVELOPMENT_TEAM": "KCX4AZY2QZ",
+      "CODE_SIGN_STYLE": "Automatic",
+      "MARKETING_VERSION": "13.1.1",
+      "SUPPORTED_PLATFORMS": "iphoneos iphonesimulator",
+      "TARGETED_DEVICE_FAMILY": "1,2"
+    }
+  },
+  "targets": {
+    "Telegram": {
+      "type": "application",
+      "platform": "iOS",
+      "info": {
+        "path": "Telegram/Info.plist"
+      },
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.haocheng.goalgram",
+          "PRODUCT_NAME": "Telegram",
+          "EXECUTABLE_NAME": "Telegram",
+          "CODE_SIGN_ENTITLEMENTS": "Telegram/Goalgram.entitlements",
+          "GENERATE_INFOPLIST_FILE": "NO",
+          "DEBUG_INFORMATION_FORMAT": "dwarf",
+          "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
+          "SWIFT_VERSION": "5.0",
+          "SKIP_INSTALL": "NO"
+        }
+      },
+      "postBuildScripts": [
+        {
+          "name": "Stage real Bazel product",
+          "script": "python3 -I \"$SRCROOT/stage-bundle.py\"",
+          "basedOnDependencyAnalysis": false
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "BroadcastUploadExtension",
+          "embed": true
+        },
+        {
+          "target": "IntentsExtension",
+          "embed": true
+        },
+        {
+          "target": "NotificationContentExtension",
+          "embed": true
+        },
+        {
+          "target": "NotificationServiceExtensionv1",
+          "embed": true
+        },
+        {
+          "target": "ShareExtension",
+          "embed": true
+        },
+        {
+          "target": "WidgetExtension",
+          "embed": true
+        }
+      ]
+    },
+    "BroadcastUploadExtension": {
+      "type": "app-extension",
+      "platform": "iOS",
+      "info": {
+        "path": "BroadcastUploadExtension/Info.plist"
+      },
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.haocheng.goalgram.BroadcastUpload",
+          "PRODUCT_NAME": "BroadcastUploadExtension",
+          "EXECUTABLE_NAME": "BroadcastUploadExtension",
+          "CODE_SIGN_ENTITLEMENTS": "BroadcastUploadExtension/Goalgram.entitlements",
+          "GENERATE_INFOPLIST_FILE": "NO",
+          "DEBUG_INFORMATION_FORMAT": "dwarf",
+          "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
+          "SWIFT_VERSION": "5.0",
+          "SKIP_INSTALL": "YES"
+        }
+      },
+      "postBuildScripts": [
+        {
+          "name": "Stage real Bazel product",
+          "script": "python3 -I \"$SRCROOT/stage-bundle.py\"",
+          "basedOnDependencyAnalysis": false
+        }
+      ]
+    },
+    "IntentsExtension": {
+      "type": "app-extension",
+      "platform": "iOS",
+      "info": {
+        "path": "IntentsExtension/Info.plist"
+      },
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.haocheng.goalgram.SiriIntents",
+          "PRODUCT_NAME": "IntentsExtension",
+          "EXECUTABLE_NAME": "IntentsExtension",
+          "CODE_SIGN_ENTITLEMENTS": "IntentsExtension/Goalgram.entitlements",
+          "GENERATE_INFOPLIST_FILE": "NO",
+          "DEBUG_INFORMATION_FORMAT": "dwarf",
+          "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
+          "SWIFT_VERSION": "5.0",
+          "SKIP_INSTALL": "YES"
+        }
+      },
+      "postBuildScripts": [
+        {
+          "name": "Stage real Bazel product",
+          "script": "python3 -I \"$SRCROOT/stage-bundle.py\"",
+          "basedOnDependencyAnalysis": false
+        }
+      ]
+    },
+    "NotificationContentExtension": {
+      "type": "app-extension",
+      "platform": "iOS",
+      "info": {
+        "path": "NotificationContentExtension/Info.plist"
+      },
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.haocheng.goalgram.NotificationContent",
+          "PRODUCT_NAME": "NotificationContentExtension",
+          "EXECUTABLE_NAME": "NotificationContentExtension",
+          "CODE_SIGN_ENTITLEMENTS": "NotificationContentExtension/Goalgram.entitlements",
+          "GENERATE_INFOPLIST_FILE": "NO",
+          "DEBUG_INFORMATION_FORMAT": "dwarf",
+          "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
+          "SWIFT_VERSION": "5.0",
+          "SKIP_INSTALL": "YES"
+        }
+      },
+      "postBuildScripts": [
+        {
+          "name": "Stage real Bazel product",
+          "script": "python3 -I \"$SRCROOT/stage-bundle.py\"",
+          "basedOnDependencyAnalysis": false
+        }
+      ]
+    },
+    "NotificationServiceExtensionv1": {
+      "type": "app-extension",
+      "platform": "iOS",
+      "info": {
+        "path": "NotificationServiceExtensionv1/Info.plist"
+      },
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.haocheng.goalgram.NotificationService",
+          "PRODUCT_NAME": "NotificationServiceExtensionv1",
+          "EXECUTABLE_NAME": "NotificationServiceExtensionv1",
+          "CODE_SIGN_ENTITLEMENTS": "NotificationServiceExtensionv1/Goalgram.entitlements",
+          "GENERATE_INFOPLIST_FILE": "NO",
+          "DEBUG_INFORMATION_FORMAT": "dwarf",
+          "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
+          "SWIFT_VERSION": "5.0",
+          "SKIP_INSTALL": "YES"
+        }
+      },
+      "postBuildScripts": [
+        {
+          "name": "Stage real Bazel product",
+          "script": "python3 -I \"$SRCROOT/stage-bundle.py\"",
+          "basedOnDependencyAnalysis": false
+        }
+      ]
+    },
+    "ShareExtension": {
+      "type": "app-extension",
+      "platform": "iOS",
+      "info": {
+        "path": "ShareExtension/Info.plist"
+      },
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.haocheng.goalgram.Share",
+          "PRODUCT_NAME": "ShareExtension",
+          "EXECUTABLE_NAME": "ShareExtension",
+          "CODE_SIGN_ENTITLEMENTS": "ShareExtension/Goalgram.entitlements",
+          "GENERATE_INFOPLIST_FILE": "NO",
+          "DEBUG_INFORMATION_FORMAT": "dwarf",
+          "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
+          "SWIFT_VERSION": "5.0",
+          "SKIP_INSTALL": "YES"
+        }
+      },
+      "postBuildScripts": [
+        {
+          "name": "Stage real Bazel product",
+          "script": "python3 -I \"$SRCROOT/stage-bundle.py\"",
+          "basedOnDependencyAnalysis": false
+        }
+      ]
+    },
+    "WidgetExtension": {
+      "type": "app-extension",
+      "platform": "iOS",
+      "info": {
+        "path": "WidgetExtension/Info.plist"
+      },
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.haocheng.goalgram.Widget",
+          "PRODUCT_NAME": "WidgetExtension",
+          "EXECUTABLE_NAME": "WidgetExtension",
+          "CODE_SIGN_ENTITLEMENTS": "WidgetExtension/Goalgram.entitlements",
+          "GENERATE_INFOPLIST_FILE": "NO",
+          "DEBUG_INFORMATION_FORMAT": "dwarf",
+          "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
+          "SWIFT_VERSION": "5.0",
+          "SKIP_INSTALL": "YES"
+        }
+      },
+      "postBuildScripts": [
+        {
+          "name": "Stage real Bazel product",
+          "script": "python3 -I \"$SRCROOT/stage-bundle.py\"",
+          "basedOnDependencyAnalysis": false
+        }
+      ]
+    }
+  },
+  "schemes": {
+    "Goalgram": {
+      "build": {
+        "targets": {
+          "Telegram": [
+            "running",
+            "testing",
+            "profiling",
+            "archiving",
+            "analyzing"
+          ]
+        }
+      },
+      "archive": {
+        "config": "Release"
+      }
+    }
+  },
+  "configFiles": {
+    "Debug": "BuildNumber.xcconfig",
+    "Release": "BuildNumber.xcconfig"
+  }
+}
