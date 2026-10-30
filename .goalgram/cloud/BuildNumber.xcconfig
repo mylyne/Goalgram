@@ -1,0 +1,2 @@
+// Cloud preparation replaces the build number before archiving.
+CURRENT_PROJECT_VERSION = 10014

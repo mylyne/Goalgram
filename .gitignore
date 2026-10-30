@@ -35,6 +35,9 @@ AppBundle.xcworkspace/*
 *.xcworkspace
 *.xcodeproj
 !*_Xcode.xcodeproj
+!/.goalgram/cloud/GoalgramCloud.xcodeproj/
+/.cloud-private/
+/.cloud-stage/
 .idea
 */.idea/*
 submodules/MtProtoKit/TON/macOS/lib/libtonlibjson.0.5.dylib
