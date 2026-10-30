@@ -59,6 +59,8 @@ def main():
                         'keychain-access-groups':[team + '.' + config['bundle_id']],
                         'com.apple.security.application-groups':['group.' + config['bundle_id']]}
         profile = {'Name':'UNSIGNED ARCHIVE BOOTSTRAP ' + name,'UUID':str(uuid.uuid4()),
+                   'AppIDName':'Goalgram ' + name,'TeamName':'Goalgram Bootstrap',
+                   'TimeToLive':2,
                    'TeamIdentifier':[team],'ApplicationIdentifierPrefix':[team],
                    'CreationDate':now,'ExpirationDate':now + datetime.timedelta(days=2),
                    'Platform':['iOS'],'Version':1,'Entitlements':entitlements}
