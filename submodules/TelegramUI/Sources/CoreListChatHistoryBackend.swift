@@ -1174,7 +1174,11 @@ final class CoreListChatHistoryBackend: ASDisplayNode, ChatHistoryListViewBacken
             // be the settled geometry, which mid-fling is the fling's destination (see `forEachVisibleItemNode`).
             if !transition.isImmediate {
                 Queue.mainQueue().after(transition.duration * UIView.animationDurationFactor(), { [weak self] in
-                    self?.updateVisibleItemRange(force: false)
+                    guard let self else { return }
+                    self.updateVisibleItemRange(force: false)
+                    // Read tracking samples presented message frames from the offset callback, not
+                    // from the range callback. Re-publish after the pass reveals those messages.
+                    self.updateVisibleContentOffset(transition: .immediate, geometry: .presented)
                 })
             }
         }
