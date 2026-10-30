@@ -80,17 +80,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		474FDAB2F3A62BE3583FA47F /* Telegram.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Telegram.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		50FA6779BD5B1DE6A3A82107 /* IntentsExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		663B308FE7047B3B165A838D /* NotificationContentExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = NotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		7972D4EB5BFAC8065AB859AC /* ShareExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		86B34CF49AAFDEB2A11EE576 /* BroadcastUploadExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = BroadcastUploadExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FE3EDDDAA6A59BA6ADCB496 /* NotificationServiceExtensionv1.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = NotificationServiceExtensionv1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		96E127DC050D489C2A370F6E /* WidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		474FDAB2F3A62BE3583FA47F /* Telegram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50FA6779BD5B1DE6A3A82107 /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		663B308FE7047B3B165A838D /* NotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7972D4EB5BFAC8065AB859AC /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		86B34CF49AAFDEB2A11EE576 /* BroadcastUploadExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BroadcastUploadExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE3EDDDAA6A59BA6ADCB496 /* NotificationServiceExtensionv1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtensionv1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E127DC050D489C2A370F6E /* WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		"TEMP_CEB9C9A6-2FC2-487E-8EC6-40F108462C9C" /* BuildNumber.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildNumber.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		3E415C613093C60F00E52D36 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				"TEMP_CEB9C9A6-2FC2-487E-8EC6-40F108462C9C" /* BuildNumber.xcconfig */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		953308DB0E0B5B79DA3450A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,15 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				953308DB0E0B5B79DA3450A2 /* Products */,
+				3E415C613093C60F00E52D36 /* Recovered References */,
 			);
-			sourceTree = "<group>";
-		};
-		"TEMP_23532FBE-BE4D-4DAA-A300-20589127294E" /* cloud */ = {
-			isa = PBXGroup;
-			children = (
-				"TEMP_CEB9C9A6-2FC2-487E-8EC6-40F108462C9C" /* BuildNumber.xcconfig */,
-			);
-			path = cloud;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

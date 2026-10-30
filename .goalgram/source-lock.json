@@ -40,7 +40,7 @@
     ".goalgram/cloud/ShareExtension/Info.plist": "0de8d760113d2266ee2ca97a1d1d7e454b2d02df44e44e3766cc80213eac945c",
     ".goalgram/cloud/BroadcastUploadExtension/Goalgram.entitlements": "e77556a218dc32215b933582c5eac4955774917adc5347c0fbf6a9bde5954529",
     ".goalgram/cloud/BroadcastUploadExtension/Info.plist": "0de8d760113d2266ee2ca97a1d1d7e454b2d02df44e44e3766cc80213eac945c",
-    ".goalgram/cloud/GoalgramCloud.xcodeproj/project.pbxproj": "60933e48599cecbb8477535d5055bb6b3c7ed03b0b6683e1f3f8b5b7406c9a7e",
+    ".goalgram/cloud/GoalgramCloud.xcodeproj/project.pbxproj": "1a8f8501d732cde30379d3191b8878d3f074913bba23fa1ef80562f4d8e0bdb0",
     ".goalgram/cloud/GoalgramCloud.xcodeproj/xcshareddata/xcschemes/Goalgram.xcscheme": "c1da9b756d76a1171cb35be69b7b750bece25b795c0639136e034af3cbb2be64",
     ".goalgram/cloud/WidgetExtension/Goalgram.entitlements": "e77556a218dc32215b933582c5eac4955774917adc5347c0fbf6a9bde5954529",
     ".goalgram/cloud/WidgetExtension/Info.plist": "0de8d760113d2266ee2ca97a1d1d7e454b2d02df44e44e3766cc80213eac945c",
@@ -53,6 +53,7 @@
     ".goalgram/cloud/ci_scripts/ci_pre_xcodebuild.sh": "8e5526e2f47ffdbca64974f53709ee25107a404c2c724fa4bdd653bca5f41acc",
     ".goalgram/cloud/IntentsExtension/Goalgram.entitlements": "e77556a218dc32215b933582c5eac4955774917adc5347c0fbf6a9bde5954529",
     ".goalgram/cloud/IntentsExtension/Info.plist": "0de8d760113d2266ee2ca97a1d1d7e454b2d02df44e44e3766cc80213eac945c",
-    ".goalgram/cloud/GoalgramCloud.xcodeproj/xcshareddata/xcodecloud/manifest.json": "e9711cefa5c540b3228ba9bb3d294425d824dd6557b46b5b7815ef2161b47650"
+    ".goalgram/cloud/GoalgramCloud.xcodeproj/xcshareddata/xcodecloud/manifest.json": "e9711cefa5c540b3228ba9bb3d294425d824dd6557b46b5b7815ef2161b47650",
+    ".gitmodules": "8487c06d2afabcf741b86b110d2f7006aa2d41664cb23bfe01db5616e5dc98de"
   }
 }
