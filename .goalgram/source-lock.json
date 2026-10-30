@@ -35,7 +35,7 @@
     ".goalgram/cloud/README.md": "0d931e436b9f579f5689e153ae4a37d9017fb241daae2a33f7dbc59410970e95",
     ".goalgram/cloud/stage-bundle.py": "93f37237f7d8d964610496797bd9bdb4fd2bd2f53430d6b715e03719feaeef78",
     ".goalgram/cloud/BuildNumber.xcconfig": "ba84ea625380af5f417aa0cee4ac2c4c34f0869968b808601cdd3f30fd5d6d51",
-    ".goalgram/cloud/prepare-cloud.py": "f0a9ba1e2a6e7123f8b3e5f687f28b73f1075d7cd92e95c957f113e35104a4f1",
+    ".goalgram/cloud/prepare-cloud.py": "f32734c0a02b9f51577e019df7b4e969d9a54409f37968d1b481a35b2f13f77a",
     ".goalgram/cloud/ShareExtension/Goalgram.entitlements": "bb47022d610b9f586675f880ce68e080cee239bc364533b1eea17cda4bae91bb",
     ".goalgram/cloud/ShareExtension/Info.plist": "0de8d760113d2266ee2ca97a1d1d7e454b2d02df44e44e3766cc80213eac945c",
     ".goalgram/cloud/BroadcastUploadExtension/Goalgram.entitlements": "e77556a218dc32215b933582c5eac4955774917adc5347c0fbf6a9bde5954529",

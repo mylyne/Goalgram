@@ -30,8 +30,8 @@ def main():
     config_path = private / 'configuration.json'
     config_path.write_text(json.dumps(config))
     config_path.chmod(0o600)
-    number = str(10013 + int(os.environ['CI_BUILD_NUMBER']))
-    assert int(number) > 10013
+    number = str(int(os.environ['CI_BUILD_NUMBER']))
+    assert int(number) > 10013, 'Set the next Xcode Cloud build number above the last local release (10013)'
     # Cloud supplies CURRENT_PROJECT_VERSION to native signing via this configuration file.
     (root / '.goalgram/cloud/BuildNumber.xcconfig').write_text('CURRENT_PROJECT_VERSION = ' + number + '\n')
     run('git', 'submodule', 'update', '--init', '--recursive', cwd=root)
