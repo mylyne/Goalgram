@@ -26,7 +26,7 @@
     ".goalgram/cloud/WidgetExtension/Info.plist": "0de8d760113d2266ee2ca97a1d1d7e454b2d02df44e44e3766cc80213eac945c",
     ".goalgram/cloud/build-official.py": "c40babe81d4a4c6efbf9c7b48eece2c201f7502f23ad1da17a05472f6dd6c659",
     ".goalgram/cloud/ci_scripts/ci_pre_xcodebuild.sh": "8e5526e2f47ffdbca64974f53709ee25107a404c2c724fa4bdd653bca5f41acc",
-    ".goalgram/cloud/prepare-cloud.py": "f32734c0a02b9f51577e019df7b4e969d9a54409f37968d1b481a35b2f13f77a",
+    ".goalgram/cloud/prepare-cloud.py": "cb57fc6bc46204acb02d6681771b31789d05add0ddc0d29a6f75d5e8ccf57df1",
     ".goalgram/cloud/project.json": "72476c99291c4430412d3dfb7be4229b6b59b3c726eb63c32308ba403e08d716",
     ".goalgram/cloud/stage-bundle.py": "93f37237f7d8d964610496797bd9bdb4fd2bd2f53430d6b715e03719feaeef78",
     ".goalgram/test-read-landing.py": "37b14fc3a59a851355d69226a5390629c2e147c5d718366527679dfcdc168434",
@@ -54,6 +54,8 @@
     "submodules/TelegramUI/Components/PeerInfo/PeerInfoScreen/Sources/PeerInfoScreen.swift": "dbd51207b4fa25fdf52101e4a4ff023821cb20bef45248e38571e0870aa05b34",
     "submodules/TelegramUI/Sources/Chat/ChatControllerNavigationButtonAction.swift": "07c0db88bfd697981b4d0fd80022dc32f41aef244d3c3177e7614633b77c04d7",
     "submodules/TelegramUI/Sources/ChatControllerNode.swift": "38643408fffa94681d92aba349e41125e627dccb3a8e508a36f71ef6494ac687",
-    "submodules/TelegramUI/Sources/CoreListChatHistoryBackend.swift": "19796e134c21523e5eb9fbff89326032ab9275df25f35b25a7c0a75b5ad643a1"
+    "submodules/TelegramUI/Sources/CoreListChatHistoryBackend.swift": "19796e134c21523e5eb9fbff89326032ab9275df25f35b25a7c0a75b5ad643a1",
+    "submodules/TelegramUI/Sources/ChatHistoryListNode.swift": "0e4583bdaa3959020b2b4281d47462f1d182cfc4050695e0d3fd4641f2f18b8b",
+    ".goalgram/test-replied-peer-read.py": "647897211569d6c281cfd1774580ec22c51c77422bf840f3ade49cc2f06a807e"
   }
 }

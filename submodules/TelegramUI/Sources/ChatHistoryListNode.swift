@@ -195,6 +195,15 @@ struct ChatHistoryListViewTransition {
     var keepInPlaceAnchor: MessageIndex?
 }
 
+// A sent reply ends the hold. The server can restore the report/block flags on the next
+// full-user refresh after `enqueueMessages` clears them locally, so the reply itself decides.
+func chatHistoryHoldsReadsForSender(isSuspiciousPeer: Bool, hasUnknownNonContactSettings: Bool, accountHasRepliedInHistory: Bool) -> Bool {
+    if accountHasRepliedInHistory {
+        return false
+    }
+    return isSuspiciousPeer || hasUnknownNonContactSettings
+}
+
 private func maxMessageIndexForEntries(_ view: ChatHistoryView, indexRange: (Int, Int)) -> (incoming: MessageIndex?, overall: MessageIndex?) {
     var incoming: MessageIndex?
     var overall: MessageIndex?
@@ -2326,16 +2335,24 @@ public final class ChatHistoryListNodeImpl: ASDisplayNode, ChatHistoryNode, Chat
                 }
                 
                 let isSuspiciousPeer = (data.cachedData as? CachedUserData)?.isSuspiciousPeer ?? false
-                var holdsReadsForSender = isSuspiciousPeer
-                if let peerId = chatLocation.peerId, peerId.namespace == Namespaces.Peer.CloudUser, peerId != context.account.peerId, (data.cachedData as? CachedUserData)?.peerStatusSettings == nil {
-                    let isContact = view.additionalData.contains(where: { entry in
-                        if case let .peerIsContact(entryPeerId, value) = entry, entryPeerId == peerId {
-                            return value
-                        }
-                        return false
+                var hasUnknownNonContactSettings = false
+                var accountHasRepliedInHistory = false
+                if let peerId = chatLocation.peerId, peerId.namespace == Namespaces.Peer.CloudUser, peerId != context.account.peerId {
+                    if (data.cachedData as? CachedUserData)?.peerStatusSettings == nil {
+                        let isContact = view.additionalData.contains(where: { entry in
+                            if case let .peerIsContact(entryPeerId, value) = entry, entryPeerId == peerId {
+                                return value
+                            }
+                            return false
+                        })
+                        hasUnknownNonContactSettings = !isContact
+                    }
+                    accountHasRepliedInHistory = view.entries.contains(where: { entry in
+                        let message = entry.message
+                        return message.id.peerId == peerId && message.id.namespace == Namespaces.Message.Cloud && !message.effectivelyIncoming(context.account.peerId)
                     })
-                    holdsReadsForSender = !isContact
                 }
+                let holdsReadsForSender = chatHistoryHoldsReadsForSender(isSuspiciousPeer: isSuspiciousPeer, hasUnknownNonContactSettings: hasUnknownNonContactSettings, accountHasRepliedInHistory: accountHasRepliedInHistory)
                 self?.holdsReadsForSender.set(holdsReadsForSender)
                 
                 let associatedData = extractAssociatedData(chatLocation: chatLocation, view: view, automaticDownloadNetworkType: networkType, preferredStoryHighQuality: preferredStoryHighQuality, animatedEmojiStickers: animatedEmojiStickers, additionalAnimatedEmojiStickers: additionalAnimatedEmojiStickers, premiumGiftStickers: premiumGiftStickers, tonGiftStickers: tonGiftStickers, subject: subject, currentlyPlayingMessageId: currentlyPlayingMessageIdAndType?.0, isCopyProtectionEnabled: isCopyProtectionEnabled, availableReactions: availableReactions, availableMessageEffects: availableMessageEffects, savedMessageTags: savedMessageTags, defaultReaction: defaultReaction.0, areStarReactionsEnabled: defaultReaction.1, isPremium: isPremium, alwaysDisplayTranscribeButton: alwaysDisplayTranscribeButton, accountPeer: accountPeer, topicAuthorId: topicAuthorId, hasBots: chatHasBots, translateToLanguage: translateToLanguage?.toLang, maxReadStoryId: maxReadStoryId, recommendedChannels: recommendedChannels, audioTranscriptionTrial: audioTranscriptionTrial, chatThemes: chatThemes, deviceContactsNumbers: deviceContactsNumbers, isInline: !rotated, showSensitiveContent: contentSettings.ignoreContentRestrictionReasons.contains("sensitive"), isSuspiciousPeer: isSuspiciousPeer, accountCountry: accountCountry)

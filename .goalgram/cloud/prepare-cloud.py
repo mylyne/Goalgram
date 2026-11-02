@@ -36,6 +36,7 @@ def main():
     (root / '.goalgram/cloud/BuildNumber.xcconfig').write_text('CURRENT_PROJECT_VERSION = ' + number + '\n')
     run('git', 'submodule', 'update', '--init', '--recursive', cwd=root)
     run(sys.executable, '-I', str(root / '.goalgram/test-read-landing.py'))
+    run(sys.executable, '-I', str(root / '.goalgram/test-replied-peer-read.py'))
     bootstrap = private / 'bootstrap'
     profiles = bootstrap / 'profiles'
     profiles.mkdir(parents=True, exist_ok=True)
