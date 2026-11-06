@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-source = (ROOT / 'submodules/TelegramUI/Sources/CoreListChatHistoryBackend.swift').read_text()
+source = (ROOT / 'submodules/TelegramUI/Components/Chat/ChatHistoryListViewBackend/Sources/CoreListChatHistoryBackend.swift').read_text()
 start = source.index('Queue.mainQueue().after(transition.duration * UIView.animationDurationFactor(), { [weak self] in')
 end = source.index('\n                })', start) + len('\n                })')
 callback = source[start:end]
@@ -30,6 +30,7 @@ final class Backend {
     var canRead = true
     var rangeUpdates = 0
     var offsetUpdates = 0
+    var animatedPassesInFlight = 0
     func updateVisibleItemRange(force: Bool) { rangeUpdates += 1 }
     func updateVisibleContentOffset(transition: Transition, geometry: Geometry) {
         precondition(geometry == .presented, "never mark the animation destination as seen")
@@ -38,6 +39,7 @@ final class Backend {
     }
     func animate() {
         let transition = Transition()
+        self.animatedPassesInFlight += 1
         CALLBACK
     }
 }

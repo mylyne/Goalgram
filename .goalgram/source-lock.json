@@ -1,10 +1,10 @@
 {
   "upstream": "TelegramMessenger/Telegram-iOS",
-  "tag": "release-13.1.2",
-  "commit": "279f89e4d4f63f17227bf877dc3d8990f22ecd58",
+  "tag": "release-13.2",
+  "commit": "24638bc69bd083981b178dd1e7f921eebbf7fc46",
   "files": {
-    ".gitignore": "5cf134308422c5eb5894fac9b6fada54539360f127a0893e439d8c58d217e72b",
-    ".gitmodules": "8487c06d2afabcf741b86b110d2f7006aa2d41664cb23bfe01db5616e5dc98de",
+    ".gitignore": "27d776b5656f182a71e99eaf994a346e926606101926d38db18edc357479c29d",
+    ".gitmodules": "40c628d6cf83557c40687c61aa501e23733862103c2f946a6f1f0c92ce584f8a",
     ".goalgram/cloud/BroadcastUploadExtension/Goalgram.entitlements": "e77556a218dc32215b933582c5eac4955774917adc5347c0fbf6a9bde5954529",
     ".goalgram/cloud/BroadcastUploadExtension/Info.plist": "0de8d760113d2266ee2ca97a1d1d7e454b2d02df44e44e3766cc80213eac945c",
     ".goalgram/cloud/BuildNumber.xcconfig": "ba84ea625380af5f417aa0cee4ac2c4c34f0869968b808601cdd3f30fd5d6d51",
@@ -26,12 +26,13 @@
     ".goalgram/cloud/WidgetExtension/Info.plist": "0de8d760113d2266ee2ca97a1d1d7e454b2d02df44e44e3766cc80213eac945c",
     ".goalgram/cloud/build-official.py": "c40babe81d4a4c6efbf9c7b48eece2c201f7502f23ad1da17a05472f6dd6c659",
     ".goalgram/cloud/ci_scripts/ci_pre_xcodebuild.sh": "8e5526e2f47ffdbca64974f53709ee25107a404c2c724fa4bdd653bca5f41acc",
-    ".goalgram/cloud/prepare-cloud.py": "cb57fc6bc46204acb02d6681771b31789d05add0ddc0d29a6f75d5e8ccf57df1",
+    ".goalgram/cloud/prepare-cloud.py": "310e5fcf20333671dd63885ceff3e1a620c7a6cfe57bcb6d124ac7e0cccda178",
     ".goalgram/cloud/project.json": "72476c99291c4430412d3dfb7be4229b6b59b3c726eb63c32308ba403e08d716",
     ".goalgram/cloud/stage-bundle.py": "93f37237f7d8d964610496797bd9bdb4fd2bd2f53430d6b715e03719feaeef78",
-    ".goalgram/test-read-landing.py": "37b14fc3a59a851355d69226a5390629c2e147c5d718366527679dfcdc168434",
+    ".goalgram/test-no-sender-read-hold.py": "3efa12a71da9869c773b77c2c919a84e4d0d64cc1c2b74f7e1219a1ec9ec34e9",
+    ".goalgram/test-read-landing.py": "24ad09c58bd68bc670ed470878b42269e03aeeb00685d7fe859c95ba100bdb54",
     "Telegram/BUILD": "0d1acc1e43d46629219868a32b1922d27cf1231c8d7eba3c1a57f7639a305efb",
-    "Telegram/NotificationService/Sources/NotificationService.swift": "06624a710c4062714cb7a4f64e8b7030c6b251a1cef277cc88f24abcb9475088",
+    "Telegram/NotificationService/Sources/NotificationService.swift": "1e528691e6f8b94b5d96ce2f7aef2a072ba7f6a4c9943800844c3af7e7db8973",
     "Telegram/Telegram-iOS/Premium.alticon/PremiumIpad.png": "84fb2144bb2f0c32f951ce063b0c83631b6af71b31898acc1466aa2d19989439",
     "Telegram/Telegram-iOS/Premium.alticon/PremiumIpad@2x.png": "a55224eee9b8e052a312a8a9941ef1512c2402b6b43f789b7952de608334a1c9",
     "Telegram/Telegram-iOS/Premium.alticon/PremiumLargeIpad@2x.png": "3b742e46f98959cf0c168ca88ea65fe2cc03d7cb745c4fd2ded990b310bbd379",
@@ -49,13 +50,16 @@
     "Telegram/Telegram-iOS/ar.lproj/InfoPlist.strings": "74a90f552f3af704b5015024fdb6c1633da98eeaea261a77deb7e518072aab67",
     "Telegram/Telegram-iOS/ko.lproj/InfoPlist.strings": "96d49f49d6e7178b5b4b04635e590aa99a2ba1a4222c4812610877885a2a05f1",
     "submodules/Display/Source/Font.swift": "d386b0ca7ce8c3c0f03377eb859b513ec9d0fff988b79710e658c687b9ead385",
-    "submodules/TelegramUI/BUILD": "6a07eeddd5e77389a5d611cfb75f03ff904986148f7f187ea97d679e5f4992ef",
+    "submodules/TelegramUI/BUILD": "ae060e3e13585d4e56dced9650e937315dcfe40d085dafc0f27836cd7ac024e1",
     "submodules/TelegramUI/Components/PeerInfo/PeerInfoScreen/Sources/PeerInfoAvatarScrollBridge.swift": "ffde2d604508f3cf052f8e83c1cc75d3b925f9fa174e9d3e118d5917140a3d38",
-    "submodules/TelegramUI/Components/PeerInfo/PeerInfoScreen/Sources/PeerInfoScreen.swift": "dbd51207b4fa25fdf52101e4a4ff023821cb20bef45248e38571e0870aa05b34",
-    "submodules/TelegramUI/Sources/Chat/ChatControllerNavigationButtonAction.swift": "07c0db88bfd697981b4d0fd80022dc32f41aef244d3c3177e7614633b77c04d7",
-    "submodules/TelegramUI/Sources/ChatControllerNode.swift": "38643408fffa94681d92aba349e41125e627dccb3a8e508a36f71ef6494ac687",
-    "submodules/TelegramUI/Sources/CoreListChatHistoryBackend.swift": "19796e134c21523e5eb9fbff89326032ab9275df25f35b25a7c0a75b5ad643a1",
-    "submodules/TelegramUI/Sources/ChatHistoryListNode.swift": "0e4583bdaa3959020b2b4281d47462f1d182cfc4050695e0d3fd4641f2f18b8b",
-    ".goalgram/test-replied-peer-read.py": "647897211569d6c281cfd1774580ec22c51c77422bf840f3ade49cc2f06a807e"
+    "submodules/TelegramUI/Components/PeerInfo/PeerInfoScreen/Sources/PeerInfoScreen.swift": "8694f7a609674be0a834a8f148b7db3d9bff3aab5a5f8754eebaa21ef443aeac",
+    "submodules/TelegramUI/Sources/Chat/ChatControllerNavigationButtonAction.swift": "fd16de04fd2c8fd7d0a2fffacadccb19260a4a3f32c65958408f8c629c943598",
+    "submodules/TelegramUI/Sources/ChatControllerNode.swift": "d3f021576d7889a2cb0057513592f03bf91aecc1d8d7489363dcfe60b1fc4aed"
+  },
+  "submodules": {
+    "submodules/TgVoipWebrtc/tgcalls": "ea5153e7184649feccf84d6735c9029ae9e78e8d"
+  },
+  "submoduleNotes": {
+    "submodules/TgVoipWebrtc/tgcalls": "release-13.2 pins c1de0882, which is not published; using the public official development commit carrying the same fixes."
   }
 }
